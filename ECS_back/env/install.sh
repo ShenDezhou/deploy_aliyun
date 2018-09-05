@@ -1,4 +1,7 @@
+yum install -y bzip2
+yum install -y java-1.8.0-openjdk-devel
 #1. elasticsearch installation
+
 echo '1.1 repo install'
 cat <<EOT >> elasticsearch.repo
 [elasticsearch-6.x]
@@ -11,7 +14,7 @@ autorefresh=1
 type=rpm-md
 EOT
 mv elasticsearch.repo /etc/yum.repos.d/
-yum install elasticsearch
+yum install -y elasticsearch
 
 echo '1.2 localinstall'
 #wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-6.4.0.rpm
@@ -22,7 +25,6 @@ cat <<EOT >> /etc/sysconfig/elasticsearch
 ES_HEAP_SIZE=750m
 # Additional Java OPTS
 ES_JAVA_OPTS="-Xms750m -Xmx750m"
-discovery.type=single-node
 EOT
 
 echo '2.2. smartcn plugin'
@@ -37,6 +39,8 @@ yum install nginx -y
 cp nginx/app.wwwsto.com.conf /etc/nginx/conf.d/
 cp nginx/book.wwwsto.com.conf /etc/nginx/conf.d/
 cp nginx/chenhaoming.wwwsto.com /etc/nginx/conf.d/
+systemctl enable nginx.service
+systemctl start nginx.service
 
 echo '4.php installation'
 yum install -y php php-fpm php-mysql php-redis-sogou php-xml php-xmlrpc
@@ -57,7 +61,7 @@ git config --global user.name "ShenDezhou"
 
 echo '7. node  npm'
 curl --silent --location https://rpm.nodesource.com/setup_10.x | sudo bash -
-yum -y install nodejs npm
+yum -y install nodejs
 
 echo '8. logstash'
 yum install logstash -y
@@ -71,11 +75,12 @@ npm run start
 
 echo '10. change cors'
 cat <<EOT >> /etc/elasticsearch/elasticsearch.yml
+network.host:0.0.0.0
 http.cors.enabled: true
 http.cors.allow-origin: "*"
 EOT
 systemctl restart elasticsearch.service
 
 echo '11. move media'
-tar audio.tar.gz -c /var/
-mv xiaotaoqi/ /var
+tar zx audio.tar.gz -C /var/
+mv xiaotaoqi/ /var/
