@@ -1,0 +1,1000 @@
+   11  sysctl -a
+   12  sysctl -p
+   13   docker run -p 9200:9200 -p 9300:9300 --net=host --name=elastic -e "ES_JAVA_OPTS=-Xms256m -Xmx256m" -e "discovery.type=single-node" docker.elastic.co/elasticsearch/elasticsearch:6.2.4 
+   14  docker rm elastic
+   15   docker run -p 9200:9200 -p 9300:9300 --net=host --name=elastic -e "ES_JAVA_OPTS=-Xms256m -Xmx256m" -e "discovery.type=single-node" docker.elastic.co/elasticsearch/elasticsearch:6.2.4 
+   16  docker ps -a
+   17  docker logs -f elastic
+   18  docker rm elastic
+   19   docker run -p 9200:9200 -p 9300:9300 --net=host --name=elastic -e "ES_JAVA_OPTS=-Xms512m -Xmx512m" -e "discovery.type=single-node" docker.elastic.co/elasticsearch/elasticsearch:6.2.4 
+   20  git clone git://github.com/mobz/elasticsearch-head.git
+   21  free -m
+   22  docker ps -a
+   23  docker rm -f elastic
+   24  ps -ef
+   25   docker run -p 9200:9200 -p 9300:9300 --net=host --name=elastic -e "ES_HEAP_SIZE=300m" -e "discovery.type=single-node" docker.elastic.co/elasticsearch/elasticsearch:6.2.4 
+   26   docker run -p 9200:9200 -p 9300:9300 --net=host --name=elastic -e "ES_HEAP_SIZE=512m" -e "discovery.type=single-node" docker.elastic.co/elasticsearch/elasticsearch:6.2.4 
+   27  docker rm elastic
+   28   docker run -p 9200:9200 -p 9300:9300 --net=host --name=elastic -e "ES_HEAP_SIZE=512m" -e "discovery.type=single-node" docker.elastic.co/elasticsearch/elasticsearch:6.2.4 
+   29   docker run -p 9200:9200 -p 9300:9300 --net=host --name=elastic -e "ES_HEAP_SIZE=512m" -e "ES_JAVA_OPTS=-Xms512m -Xmx512m" -e "discovery.type=single-node" docker.elastic.co/elasticsearch/elasticsearch:6.2.4 
+   30  docker rm elastic
+   31   docker run -p 9200:9200 -p 9300:9300 --net=host --name=elastic -e "ES_HEAP_SIZE=512m" -e "ES_JAVA_OPTS=-Xms512m -Xmx512m" -e "discovery.type=single-node" docker.elastic.co/elasticsearch/elasticsearch:6.2.4 
+   32  docker ps -a
+   33  docker rm elastic
+   34  free -m
+   35  docker ps -a
+   36  ps -ef
+   37  free -m
+   38  reboot
+   39  free -m
+   40   docker run -p 9200:9200 -p 9300:9300 --net=host --name=elastic -e "ES_HEAP_SIZE=1G" -e "ES_JAVA_OPTS=-Xms1G -Xmx1G" -e "discovery.type=single-node" docker.elastic.co/elasticsearch/elasticsearch:6.2.4 
+   41  docker logs elastic
+   42  docker ps -a
+   43  sysctl -p
+   44  docker ps -a
+   45  docker rm elastic
+   46   docker run -p 9200:9200 -p 9300:9300 --net=host --name=elastic -e "ES_HEAP_SIZE=750m" -e "ES_JAVA_OPTS=-Xms750m -Xmx750m" -e "discovery.type=single-node" docker.elastic.co/elasticsearch/elasticsearch:6.2.4 
+   47   docker run -p 9200:9200 -p 9300:9300 --net=host --name=elastic -e "ES_HEAP_SIZE=750m" -e "ES_JAVA_OPTIONS=-Xms750m -Xmx750m" -e "discovery.type=single-node" docker.elastic.co/elasticsearch/elasticsearch:6.2.4 
+   48  ulimit -u 2048
+   49  sysctl -p|grep max
+   50  vi /etc/sysctl.conf 
+   51  sysctl -p
+   52  docker ps -a
+   53  docker rm elastic
+   54  free -m
+   55  vi /etc/security/limits.conf
+   56  ulimit -a
+   57  docker ps -a
+   58  docker rm elastic
+   59   docker run -p 9200:9200 -p 9300:9300 --net=host --name=elastic -e "ES_HEAP_SIZE=750m" -e "ES_JAVA_OPTIONS=-Xms750m -Xmx750m" -e "discovery.type=single-node" docker.elastic.co/elasticsearch/elasticsearch:6.2.4 
+   60  ll
+   61  rm -rf elasticsearch-head/
+   62  git clone https://github.com/elastic/elasticsearch.git
+   63  ps ps
+   64  ps -ef
+   65  docker ps -a
+   66  free -m
+   67  history
+   68  docker rm elastic
+   69  docker run -p 9200:9200 -p 9300:9300 --net=host --name=elastic -e "ES_HEAP_SIZE=1G" -e "ES_JAVA_OPTS=-Xms1G -Xmx1G" -e "discovery.type=single-node" docker.elastic.co/elasticsearch/elasticsearch:6.2.4 -s
+   70  docker run -p 9200:9200 -p 9300:9300 --net=host --name=elastic -e "ES_HEAP_SIZE=1G" -e "ES_JAVA_OPTS=-Xms1G -Xmx1G" -e "discovery.type=single-node" docker.elastic.co/elasticsearch/elasticsearch:6.2.4 /bin/bash -s
+   71  docker rm elastic
+   72  docker run -p 9200:9200 -p 9300:9300 --net=host --name=elastic -e "ES_HEAP_SIZE=1G" -e "ES_JAVA_OPTS=-Xms1G -Xmx1G" -e "discovery.type=single-node" docker.elastic.co/elasticsearch/elasticsearch:6.2.4 /bin/bash -s
+   73  ps -ef
+   74  docker ps -
+   75  docker ps -a
+   76  docker rm elastic
+   77  grep vm.max_map_count /etc/sysctl.conf 
+   78  docker run -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" elasticsearch
+   79  docker run -p 9200:9200 -p 9300:9300 --net=host --name=elastic -e "discovery.type=single-node" elasticsearch:6.2.4
+   80  docker run -p 9200:9200 -p 9300:9300 --net=host --name=elastic -e "discovery.type=single-node" docker.elastic.co/elasticsearch/elasticsearch:6.2.4 
+   81  docker ps -a
+   82  docker rm elastic
+   83  docker run -p 9200:9200 -p 9300:9300 --net=host --name=elastic -e ELASTIC_PASSWORD=dezhou -e "discovery.type=single-node" docker.elastic.co/elasticsearch/elasticsearch:6.2.4 
+   84  docker ps -a
+   85  docker rm elastic
+   86  docker run -dit -p 9200:9200 -p 9300:9300 --net=host --name=elastic -e ELASTIC_PASSWORD=dezhou -e "discovery.type=single-node" docker.elastic.co/elasticsearch/elasticsearch:6.2.4 /bin/bash
+   87  dokcer ps -a
+   88  docker ps -a
+   89  docker exec elastic bash
+   90  docker exec -it elastic bash
+   91  docker ps -a
+   92  history
+   93  docker exec -it elastic bash
+   94  ps -ef|grep elastic
+   95  cat /etc/hosts
+   96  ps -ef|grep elastic
+   97  free -m
+   98  docker ps -a
+   99  docker exec -it elastic bash
+  100  docker ps -a
+  101  docker exec -it elastic bash
+  102  ps -ef|grep elastic
+  103  docker run -d -p 9100:9100 mobz/elasticsearch-head:6
+  104  docker run -d -p 9100:9100 mobz/elasticsearch-head:5
+  105  ps -ef|grep 9100
+  106  ps -ef|grep 9202
+  107  ps -ef|grep 9200
+  108  docker ps -a
+  109  docker exec -it elastic bash
+  110  java -version
+  111  vi logstash.repo
+  112  cp logstash.repo /etc/yum.repos.d/
+  113  yum install logstash
+  114  yum list java1.8
+  115  yum list java-1.8
+  116  yum list java-1.8*
+  117  yum install java-1.8.0-openjdk-devel
+  118  java
+  119  echo $JAVA_HOME
+  120  logstash
+  121  locate logstash
+  122  find / -name logstash
+  123  /usr/share/logstash/bin/logstash -version
+  124  /usr/share/logstash/bin/logstash -v
+  125  /usr/share/logstash/bin/logstash --version
+  126  ll
+  127  /usr/share/logstash/bin/logstash -f weibo.conf
+  128  ll /root/weibo/*.txt
+  129  /usr/share/logstash/bin/logstash -f weibo.conf
+  130  free -m
+  131  ps -ef
+  132  docker ps -a
+  133  docker rm redis -f
+  134  docker rm crm crm1 mysql_crm
+  135  free -m
+  136  /usr/share/logstash/bin/logstash -f weibo.conf
+  137  ll
+  138  cd weibo
+  139  ll
+  140  cd ..
+  141  l
+  142  ll
+  143  cat start.sh 
+  144  free -m
+  145  ps -ef
+  146  docker ps -a
+  147  history
+  148  docker ps -a
+  149  vim /etc/ssh/sshd_config
+  150  service sshd restart
+  151  vim /etc/ssh/sshd_config
+  152  service sshd restart
+  153  docker ps -a
+  154  docker restart elastic
+  155  docker run -p 9100:9100 mobz/elasticsearch-head:5
+  156  docker ps -a
+  157  docker exec -it elastic bash
+  158  ll
+  159  docker rm clever_lichterman -f
+  160  vi start_head.sh
+  161  ll
+  162  cat start.sh 
+  163  docker ps -a
+  164  ll
+  165  history
+  166  vi start_es.sh
+  167  ll
+  168  sh start_head.sh 
+  169  vi start_head.sh 
+  170  sh start_head.sh 
+  171  vi start_head.sh 
+  172  docker p s-a
+  173  dcoekr ps -a
+  174  docker ps -a
+  175  docker rm -f eshead
+  176  sh start_head.sh 
+  177  docker ps -a
+  178  docker exec -it eshead bash
+  179  ll
+  180  docker ps -a
+  181  cat start_es.sh 
+  182  docker exec -it eshead bash
+  183  ll
+  184  docker ps -a
+  185  docker rm eshead -f
+  186  cat start_head.sh 
+  187  vi start_head.sh 
+  188  sh start_head.sh 
+  189  docker p s-a
+  190  docker ps -a
+  191  docker exec -it eshead bash
+  192  docker logs eshead
+  193  ll
+  194  docker ps -a
+  195  docker stop eshead
+  196  docker rm eshead
+  197  docker p s-a
+  198  docker ps -a
+  199  docker exec -it elastic bash
+  200  docker ps -a
+  201  docker exec -it elastic bash
+  202  docker ps -a
+  203  docker rm elastic -f
+  204  docker ps -a
+  205  free -m
+  206  yum -y install nodejs npm
+  207  npm install grunt-cli
+  208  npm install grunt
+  209  git clone git://github.com/mobz/elasticsearch-head.git
+  210  cd elasticsearch-head/
+  211  ll
+  212  vi _site/app.js 
+  213  grunt server
+  214  npm install grunt
+  215  gurnt server
+  216  grunt server
+  217  ll
+  218  cd ..
+  219  ll
+  220  npm start
+  221  cd elasticsearch-head/
+  222  ll
+  223  npm start
+  224  npm install
+  225  docker ps -a
+  226  ll
+  227  sh start_es.sh 
+  228  docker exec -it elastic bash
+  229  docker ps -a
+  230  vi start_es.sh 
+  231  docker rm elastic -f
+  232  sh start_es.sh 
+  233  docker p s-a
+  234  docker exec -it elastic bash
+  235  ll
+  236  docker ps -a
+  237  docker rm elastic 
+  238  history|grep docker
+  239  free -m
+  240  ps -ef
+  241  sh start_es.sh 
+  242  docker ps -a
+  243  free -m
+  244  docker exec -it elastic bash
+  245  docker restart elastic
+  246  docker ps -a
+  247  ll
+  248  cd elasticsearch-head/
+  249  ll
+  250  npm start
+  251  nohup npm start 1>/dev/null 2？dd
+  252  ps -ef|grep npm
+  253  nohup npm start 1>/dev/null 2>/dev/null &
+  254  l
+  255  ll
+  256  ps -ef
+  257  docker ps a
+  258  docker ps -a
+  259  docker exec -it elastic bash
+  260  ll
+  261  docker cp 
+  262  docker cp elastic:/usr/share/elasticsearch/plugins ~/plugins
+  263  cd plugins/
+  264  ll
+  265  cd ingest-geoip/
+  266  ll
+  267  cd ..
+  268  ll
+  269  pwd
+  270  cd ..
+  271  ll
+  272  vi start_es.sh 
+  273  docker ps -a
+  274  docker stop elastic
+  275  docker rm elastic
+  276  sh start_es.sh 
+  277  free -m
+  278  docker exec -it elastic bash
+  279  ll
+  280  docker exec -it elastic bash
+  281  docker cp elastic:/usr/share/elasticsearch/config/elasticsearch.yml ~/elasticsearch.yml
+  282  vi start_es.sh 
+  283  docker rm elastic -f
+  284  sh start_es.sh 
+  285  docker ps -a
+  286  docker exec -it elastic bash
+  287  ll
+  288  free -m
+  289  cd plugins/
+  290  ll
+  291  cd ..
+  292  ll
+  293  cd plugins/
+  294  ll
+  295  git clone https://github.com/huaban/elasticsearch-analysis-jieba
+  296  ll
+  297  mv elasticsearch-analysis-jieba/ jieba
+  298  ll
+  299  cd ..
+  300  ll
+  301  docker restart elastic
+  302  cd plugins/
+  303  ll
+  304  cd jieba/
+  305  ll
+  306  cd bin/
+  307  ll
+  308  sh build.sh 
+  309  yum install mvn
+  310  wget http://repos.fedorapeople.org/repos/dchen/apache-maven/epel-apache-maven.repo -O /etc/yum.repos.d/epel-apache-maven.repo
+  311  yum -y install apache-maven
+  312  y
+  313  ll
+  314  sh build.sh 
+  315  ll
+  316  cd ..
+  317  ll
+  318  cd target/
+  319  ll
+  320  cp elasticsearch-analysis-jieba-2.3.5.jar  ..
+  321  ll
+  322  cd ..
+  323  ll
+  324  cp target/elasticsearch-analysis-jieba-2.3.5-sources.jar .
+  325  ll
+  326  cd ..
+  327  ll
+  328  docker restart elastic
+  329  cd ..
+  330  ll
+  331  vi test_jieba.sh
+  332  sh test_jieba.sh 
+  333  docker p s-a
+  334  docker ps -a
+  335  ll
+  336  cd plugins/
+  337  ll
+  338  cd jieba/
+  339  ll
+  340  docker start elastic
+  341  docker ps -a
+  342  ll
+  343  rm elasticsearch-analysis-jieba-2.3.5* -f
+  344  ll
+  345  docker start elastic
+  346  docker p s-a
+  347  docker ps -a
+  348  ll
+  349  cd ..
+  350  ll
+  351  cd x-pack/
+  352  ll
+  353  cd ..
+  354  ll
+  355  cd ingest-geoip/
+  356  ll
+  357  cd ..
+  358  ll
+  359  mv jieba/ root/backup/jieba/
+  360  mkdir /root/backup
+  361  mv jieba/ /root/backup/jieba/
+  362  ll
+  363  docker start elasic
+  364  docker start elastic
+  365  docker p s-a
+  366  docker ps -a
+  367  docker exec -it elastic bash
+  368  ll
+  369  git clone git@github.com:hongfuli/elasticsearch-analysis-jieba.git
+  370  git clone github.com:hongfuli/elasticsearch-analysis-jieba.git
+  371  git clone github.com:hongfuli/elasticsearch-analysis-jieba
+  372  git clone http://github.com/hongfuli/elasticsearch-analysis-jieba
+  373  cd elasticsearch-analysis-jieba/
+  374  ll
+  375  mvn package
+  376  ll
+  377  cd target/
+  378  ll
+  379  cp elasticsearch-analysis-jieba-1.0-SNAPSHOT.jar ..
+  380  ll
+  381  cd ..
+  382  ll
+  383  cd ..
+  384  ll
+  385  cp elasticsearch-analysis-jieba/ jieba/
+  386  ll
+  387  mv elasticsearch-analysis-jieba/ jieba/
+  388  ll
+  389  docker ps -a
+  390  docker restart elastic
+  391  free -m
+  392  docker ps -a
+  393  ll
+  394  history
+  395  mv jieba/ elasticsearch-analysis-jieba/
+  396  ll
+  397  cd elasticsearch-analysis-jieba/
+  398  ll
+  399  cd ..
+  400  ll
+  401  mkdir jieba
+  402  cp elasticsearch-analysis-jieba/elasticsearch-analysis-jieba-1.0-SNAPSHOT.jar jieba/
+  403  ll
+  404  rm elasticsearch-analysis-jieba/ -rf
+  405  ll
+  406  cd jieba/
+  407  ll
+  408  docker restart elastic
+  409  docker ps -a
+  410  cd ..
+  411  rm jieba/
+  412  ll
+  413  rm jieba/ -rf
+  414  docker restart elastic
+  415  docker exec -it elastic bash
+  416  ll
+  417  tar zxvf v6.0.0.tar.gz 
+  418  rm v6.0.0.tar.gz 
+  419  wget https://github.com/sing1ee/elasticsearch-jieba-plugin/archive/v6.0.0.tar.gz
+  420  ll
+  421  tar zxvf v6.0.0.tar.gz 
+  422  ll
+  423  cd elasticsearch-jieba-plugin-6.0.0/
+  424  ll
+  425  gradle pz
+  426  cd ..
+  427  ll
+  428  cd x-pack/
+  429  ll
+  430  cd ..
+  431  l
+  432  cd x-pack/
+  433  ll
+  434  mkdir elasticsearch
+  435  cd ..
+  436  ll
+  437  cd elasticsearch-jieba-plugin-6.0.0/
+  438  ll
+  439  docker exec -it elastic bash
+  440  ll
+  441  cd ..
+  442  ll
+  443  docker ps -a
+  444  cd ..
+  445  ll
+  446  wget https://gradle.org/next-steps/?version=4.8&format=bin
+  447  wget https://services.gradle.org/distributions/gradle-4.8-bin.zip?_ga=2.9569845.1681749547.1528618108-1694675876.1528618108
+  448  cd backup/
+  449  ll
+  450  cd jieba/
+  451  ll
+  452  mvn package
+  453  ps -ef
+  454  free -m
+  455  yum install -y unzip zipyum install -y unzip zip
+  456  unzip gradle-4.8-bin.zip
+  457  mv gradle-4.8 /usr/local/gradle
+  458  echo 'export GRADLE_HOME=/usr/local/gradle' > /etc/profile.d/gradle.sh
+  459  echo 'export PATH=$PATH:$GRADLE_HOME/bin'  >> /etc/profile.d/gradle.sh
+  460  . /etc/profile.d/gradle.sh
+  461  echo $PATH
+  462  gradle -v
+  463  ll
+  464  cd plugins/
+  465  ll
+  466  cd ..
+  467  ll
+  468  rm gradle-4.8-bin.zip?_ga=2.9569845.1681749547.1528618108-1694675876.1528618108 -f
+  469  ll
+  470  rm index.html?version=4.8 -f
+  471  ll
+  472  cd plugins/
+  473  ll
+  474  cd ..
+  475  curl -O https://github.com/sing1ee/elasticsearch-jieba-plugin/archive/v6.0.0.zip
+  476  free -m
+  477  vi start_es.sh 
+  478  unzip v6.0.0.zip 
+  479  wget https://github.com/sing1ee/elasticsearch-jieba-plugin/archive/v6.0.0.zip
+  480  unzip v6.0.0.zip.1 
+  481  ll
+  482  rm v6.0.0.zip
+  483  rm v6.0.0.zip -f
+  484  ll
+  485  cd elasticsearch-jieba-plugin-6.0.0/
+  486  ll
+  487  gradle pz
+  488  ll
+  489  cd build
+  490  ll
+  491  cd distributions/
+  492  ll
+  493  cp elasticsearch-jieba-plugin-6.0.0.zip /root/plugins/jieba
+  494  cd /root
+  495  cd plugins/
+  496  ll
+  497  unzip jieba
+  498  rm jieba -f
+  499  cp ~/elasticsearch-jieba-plugin-6.0.0/build/distributions/elasticsearch-jieba-plugin-6.0.0.zip .
+  500  ll
+  501  unzip elasticsearch-jieba-plugin-6.0.0.zip 
+  502  ll
+  503  rm elasticsearch-jieba-plugin-6.0.0.zip 
+  504  docker restart elastic
+  505  docker ps -a
+  506  docker logs elastic
+  507  history
+  508  cp ~/elasticsearch-jieba-plugin-6.0.0/build/distributions/elasticsearch-jieba-plugin-6.0.0.zip .
+  509  ll
+  510  rm jieba/ -rf
+  511  ll
+  512  docker start elastic
+  513  docker ps -a
+  514  docker exec -it elastic bash
+  515  rm elasticsearch-jieba-plugin-6.0.0.zip 
+  516  docker start elastic
+  517  docker ps -a
+  518  ll
+  519  docker p s-a
+  520  docker ps -a
+  521  docker rm elastic -f
+  522   cp ~/elasticsearch-jieba-plugin-6.0.0/build/distributions/elasticsearch-jieba-plugin-6.0.0.zip .
+  523  ll
+  524  cd x-pack/
+  525  ll
+  526  rm elasticsearch/ -rf
+  527  ll
+  528  cd ..
+  529  ll
+  530  unzip elasticsearch-jieba-plugin-6.0.0.zip 
+  531  rm elasticsearch-jieba-plugin-6.0.0.zip 
+  532  cd ..
+  533  ll
+  534  cat start_es.sh 
+  535  free -m
+  536  sh start_es.sh
+  537  docker ps -a
+  538  vi start_es.sh 
+  539  docker rm elastic
+  540  sh start_es.sh 
+  541  docker p s-a
+  542  docker ps -a
+  543  docker exec -it elastic bash
+  544  docker cp ~/elasticsearch-jieba-plugin-6.0.0/build/distributions/elasticsearch-jieba-plugin-6.0.0.zip elastic:/usr/share/elasticsearch/plugins/
+  545  docker exec -it elastic bash
+  546  ll
+  547  docker ps -a
+  548  docker restart elastic
+  549  docker ps -a
+  550  curl -L -O https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-6.3.0.tar.gz
+  551  tar -xvf elasticsearch-6.3.0.tar.gz
+  552  wget  https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-6.3.0.tar.gz
+  553  docker ps -a
+  554  docker rm elastic
+  555  free -m
+  556  yum localinstall elasticsearch-6.2.4.rpm 
+  557  ll
+  558  which elasticsearch
+  559  find / -name elastic
+  560  cd /usr/share
+  561  ll
+  562  cd elasticsearch/
+  563  ll
+  564  cd bin
+  565  pwd
+  566  /usr/share/elasticsearch/bin/elasticsearch
+  567  echo $PATH
+  568  PATH=/usr/share/elasticsearch/bin:$PATH
+  569  cd ~
+  570  ll
+  571  rm gradle-4.8-bin.zip?_ga=2.9569845.1681749547.1528618108-1694675876.1528618108 -f
+  572  ll
+  573  rm v6.0.0.zip.1 -f
+  574  ll
+  575  rm elasticsearch-6.3.0.tar.gz -f
+  576  ll
+  577  cat start_es.sh 
+  578  elasticsearch ES_HEAP_SIZE=750m ES_JAVA_OPTIONS=-Xms750m -Xmx750m discovery.type=single-node
+  579  elasticsearch -EES_HEAP_SIZE=750m -E"ES_JAVA_OPTIONS=-Xms750m -Xmx750m" -Ediscovery.type=single-node
+  580  sudo -u elasticsearch elasticsearch -EES_HEAP_SIZE=750m -E"ES_JAVA_OPTIONS=-Xms750m -Xmx750m" -Ediscovery.type=single-node
+  581  echo $PATH
+  582  sudo -u elasticsearch /usr/share/elasticsearch/bin/elasticsearch -EES_HEAP_SIZE=750m -E"ES_JAVA_OPTIONS=-Xms750m -Xmx750m" -Ediscovery.type=single-node
+  583  cat /etc/sysconfig/elasticsearch
+  584  vi /etc/sysconfig/elasticsearch
+  585  useradd elasticsearch
+  586  sudo -u elasticsearch -Ediscovery.type=single-node
+  587  history
+  588  sudo -u elasticsearch /usr/share/elasticsearch/bin/elasticsearch  -Ediscovery.type=single-node
+  589  vi /etc/sysconfig/elasticsearch
+  590  sudo -u elasticsearch /usr/share/elasticsearch/bin/elasticsearch  -Ediscovery.type=single-node
+  591  cd /etc/
+  592  history
+  593  cd /usr/share/elasticsearch/
+  594  ll
+  595  cd bi
+  596  ll
+  597  cd bin
+  598  ll
+  599  cd ..
+  600  ll
+  601  cd modules/
+  602  ll
+  603  cd ..
+  604  ll
+  605  cd plugins/
+  606  ll
+  607  cd ..
+  608  ll
+  609  cd bin
+  610  ll
+  611  cd ..
+  612  ll
+  613  cd /etc
+  614  ll
+  615  history
+  616  cd /etc/sysconfig/
+  617  ll
+  618  vi elasticsearch 
+  619  find / -name=elasticsearch.yml
+  620  find / --name=elasticsearch.yml
+  621  find / -name elasticsearch.yml
+  622  vi /etc/elasticsearch/elasticsearch.yml
+  623  history
+  624  sudo -u elasticsearch /usr/share/elasticsearch/bin/elasticsearch  -Ediscovery.type=single-node
+  625  cd /etc/
+  626  ll
+  627  history
+  628  cd /usr/share/elasticsearch/
+  629  ll
+  630  cd plugins/
+  631  ll
+  632  cp /root/elasticsearch-jieba-plugin-6.0.0/build/distributions/elasticsearch-jieba-plugin-6.0.0.zip  .
+  633  ll
+  634  unzip elasticsearch-jieba-plugin-6.0.0.zip 
+  635  rm elasticsearch-jieba-plugin-6.0.0.zip -f
+  636  history
+  637  cd ~
+  638  ll
+  639  free -m
+  640  vi start_es.sh 
+  641  sh start_es.sh 
+  642  ps -ef
+  643  free -m
+  644  ll
+  645  vi start_es.sh 
+  646  nohup sh start.sh &
+  647  ll
+  648  free -m
+  649  nohup sh start_es.sh &
+  650  ll
+  651  sh start_es.sh 
+  652  ll
+  653  free -m
+  654  cat start_es.sh 
+  655  sudo -u elasticsearch /usr/share/elasticsearch/bin/elasticsearch  -Ediscovery.type=single-node 
+  656  cd /usr/share/elasticsearch/bin/
+  657  elasticsearch-plugin install https://github.com/medcl/elasticsearch-analysis-ik/releases/download/v6.2.4/elasticsearch-analysis-ik-6.2.4.zip
+  658  cd ..
+  659  ll
+  660  bin/elasticsearch-plugin install elasticsearch-analysis-ik-6.2.4.zip 
+  661  cd root
+  662  ll
+  663  cd root
+  664  ll
+  665  cd /root
+  666  ll
+  667  yum remove elasticsearch
+  668  yum localinstall elasticsearch-6.0.0.rpm -y
+  669  vi /etc/elasticsearch/elasticsearch.yml.rpmsave
+  670  cp  /etc/elasticsearch/elasticsearch.yml  /etc/elasticsearch/elasticsearch.yml.bak
+  671  mv /etc/elasticsearch/elasticsearch.yml.rpmsave /etc/elasticsearch/elasticsearch.yml
+  672  cat /etc/sysconfig/elasticsearch.rpmsave
+  673  cp /etc/sysconfig/elasticsearch /etc/sysconfig/elasticsearch.bak
+  674  mv /etc/sysconfig/elasticsearch.rpmsave /etc/sysconfig/elasticsearch
+  675  ll
+  676  cat start_es.sh 
+  677  sudo -u elasticsearch /usr/share/elasticsearch/bin/elasticsearch  -Ediscovery.type=single-node
+  678  history
+  679  cd /usr/share/elasticsearch/plugins/
+  680  cp /root/elasticsearch-jieba-plugin-6.0.0/build/distributions/elasticsearch-jieba-plugin-6.0.0.zip  .
+  681  unzip elasticsearch-jieba-plugin-6.0.0.zip 
+  682  ll
+  683  rm elasticsearch-jieba-plugin-6.0.0.zip 
+  684  cd ~
+  685  ll
+  686  sh start_es.sh 
+  687  history
+  688  cat start_es.sh 
+  689  vi /etc/sysconfig/elasticsearch
+  690  service elasticsearch start
+  691  ps -ef
+  692  ll
+  693  service elasticsearch start
+  694  service elasticsearch status
+  695  vi /etc/sysconfig/elasticsearch
+  696  service elasticsearch status
+  697  service elasticsearch start
+  698  service elasticsearch status
+  699  ps -ef
+  700  python
+  701  docker ps -a
+  702  ll
+  703  cat start.sh 
+  704  ll
+  705  free -m
+  706  ll
+  707  ps -ef
+  708  ps -ef|grep node
+  709  ll
+  710  cat test_jieba.sh 
+  711  cd PyCRM/
+  712  ll
+  713  git status
+  714  git add .
+  715  git commit -m "shendezhou"
+  716  git push
+  717  ll
+  718  git status
+  719  cd ..
+  720  ll
+  721  rm PyCRM/ -rf
+  722  ll
+  723  cd elasticsearch-head/
+  724  ll
+  725  cd ..
+  726  ll
+  727  history
+  728  history|grep elasticsearch-jieba-plugin-6.0.0
+  729  ll
+  730  ps -ef|grep node
+  731  ll
+  732  rm elasticsearch-head/ -rf
+  733  rm node_modules/ -rf
+  734  ll
+  735  rm start* -f
+  736  ll
+  737  cd dezhoukv/
+  738  ll
+  739  history|grep logstash
+  740  cd ..
+  741  ll
+  742  sh dump_actors.sh 
+  743  ll plugins/inputs/file
+  744  sh dump_actors.sh 
+  745  curl -XPUT 39.104.58.183:9200/jieba -d '{
+  746      "settings" : {
+  747          "number_of_shards" : 1,
+  748          "number_of_replicas" : 0
+  749      },
+  750      "mappings" : {
+  751          "actor" : {
+  752              "_all" : { "enabled" : false },
+  753              "properties": {                  
+  754                  "fans": {"type":"long"},  
+  755                  "truename": {"type" : "string", "analyzer" : "jieba_index", "search_analyzer" : "jieba_search", "keyword":{"type":"keyword"}},  
+  756                  "uid": {"type" : "string", "analyzer" : "jieba_index", "search_analyzer" : "jieba_search", "keyword":{"type":"keyword"}},  
+  757                  "name": {"type" : "string", "analyzer" : "jieba_index", "search_analyzer" : "jieba_search" , "keyword":{"type":"keyword"}},
+  758                  "description": {"type" : "string", "analyzer" : "jieba_index", "search_analyzer" : "jieba_search", "keyword":{"type":"keyword"}}                        
+  759              }  
+  760          }
+  761      }
+  762  }';echo
+  763  sh dump_actors.sh 
+  764  sh dump_actors.sh > weibo.log
+  765  sh dump_actors.sh 
+  766  ll
+  767  vi weibo.log 
+  768  ll
+  769  sh dump_actors.sh 
+  770  ll
+  771  cd weibo
+  772  ll
+  773  sh dump_actors.sh 
+  774  cd ..
+  775  ll
+  776  sh dump_actors.sh 
+  777  free -m
+  778  cat init_es.sh 
+  779  sudo -u elasticsearch /usr/share/elasticsearch/bin/elasticsearch  -Ediscovery.type=single-node
+  780  sudo -u elasticsearch /usr/share/elasticsearch/bin/elasticsearch  -Ediscovery.type=single-node &
+  781  yum remove elasticsearch
+  782  yum install elasticsearch
+  783  bin/elasticsearch-plugin install analysis-smartcn
+  784  history|grep elastic
+  785  /usr/share/elasticsearch/bin/elasticsearch-plugin install analysis-smartcn
+  786  sudo -u elasticsearch /usr/share/elasticsearch/bin/elasticsearch  -Ediscovery.type=single-node
+  787  ll
+  788  free -m
+  789  ps -ef|grep elastic
+  790  kill -9 28340 28341
+  791  ll
+  792  sudo -u elasticsearch /usr/share/elasticsearch/bin/elasticsearch  -Ediscovery.type=single-node
+  793  vi /etc/sysconfig/elasticsearch.rpmsave
+  794  cp /etc/sysconfig/elasticsearch.rpmsave /etc/sysconfig/elasticsearch
+  795  cp /etc/elasticsearch/elasticsearch.yml.rpmsave /etc/elasticsearch/elasticsearch.yml
+  796  sudo -u elasticsearch /usr/share/elasticsearch/bin/elasticsearch  -Ediscovery.type=single-node
+  797  yum reinstall elasticsearch
+  798  /usr/share/elasticsearch/bin/elasticsearch-plugin install analysis-smartcn
+  799  cd /etc/sysconfig/
+  800  cd /etc/elasticsearch/
+  801  history
+  802  sudo -u elasticsearch /usr/share/elasticsearch/bin/elasticsearch  -Ediscovery.type=single-node
+  803  ps -ef
+  804  free 
+  805  free -m
+  806  sudo -u elasticsearch /usr/share/elasticsearch/bin/elasticsearch  -Ediscovery.type=single-node &
+  807  yum install kibana
+  808  service start kibana
+  809  service  kibana start
+  810  service kibana status
+  811  cd /etc/kibana/
+  812  l
+  813  ll
+  814  vi kibana.yml 
+  815  serivce kibana restart
+  816  service kibana restart
+  817  free -m
+  818  history
+  819  sudo -u elasticsearch /usr/share/elasticsearch/bin/elasticsearch  -Ediscovery.type=single-node &
+  820  free -m
+  821  service elasticsearch start
+  822  systemctl daemon-reload
+  823  free -m
+  824  service kibana status
+  825  service kibana start
+  826  service kibana status
+  827  service kibana stop
+  828  service kibana start
+  829  service kibana stop
+  830  service kibana start
+  831  service logs kibana
+  832  syslogs kiana
+  833  service kibana stop
+  834  ifconfig
+  835  docker ps -a
+  836  ps -ef
+  837  cp dump_actors.sh dump_follow.sh
+  838  vi dump_follow.sh 
+  839  sh dump_follow.sh 
+  840  free -m
+  841  service elasticsearch start
+  842  ifconfig
+  843  cd  /etc/nginx/conf.d/
+  844  ll
+  845  cat www.wwwsto.com.conf 
+  846  cd wi
+  847  cd weibo
+  848  ll
+  849  cd actor/
+  850  ll
+  851  cat weibo.conf 
+  852  cd ..
+  853  ll
+  854  cd follow/
+  855  ll
+  856  vi weibo.conf 
+  857  service kibana status
+  858  service kibana start
+  859  service kibana stop
+  860  docker ps -a
+  861  netstat -anp
+  862  ps -ef|grep java
+  863  cd weibo
+  864  ll
+  865  cd follow/
+  866  ll
+  867  vi weibo.conf 
+  868  free -m
+  869  ps -ef|grep java
+  870  ps -ef|grep 27897
+  871  kill -9 27897
+  872  ps -ef|grep java
+  873  cd /etc/elasticsearch
+  874  ll
+  875  free -m
+  876  service logstash start
+  877  service logstashd start
+  878  ll
+  879  cd ..
+  880  ll
+  881  cd elasticsearch
+  882  ll
+  883  cd ..
+  884  cd /usr/local
+  885  ll
+  886  cd share
+  887  ll
+  888  cd ..
+  889  ll
+  890  cd bin
+  891  ll
+  892  cd ..
+  893  ll
+  894  cd share
+  895  ll
+  896  cd ..
+  897  which elasticsearch 
+  898  find -name elasticsearch  /
+  899  find / -name elasticsearch 
+  900  /usr/share/elasticsearch/bin/elasticsearch -d
+  901  free -m
+  902  /usr/share/elasticsearch/bin/elasticsearch 
+  903  history|grep /usr/share/elasticsearch/bin/elasticsearch
+  904  sudo -u elasticsearch /usr/share/elasticsearch/bin/elasticsearch  -Ediscovery.type=single-node &
+  905  free -m
+  906  ps -ef|grep elasticsearch
+  907  kill -9 9032
+  908  sudo -u elasticsearch /usr/share/elasticsearch/bin/elasticsearch -Ediscovery.type=single-node &
+  909  ps -ef|grep elasticsearch
+  910  kill -9 9122
+  911  ll
+  912  sudo -u elasticsearch /usr/share/elasticsearch/bin/elasticsearch -Ediscovery.type=single-node &
+  913  free -m
+  914  ps -ef|elasticsearch
+  915  ps -ef|grep elasticsearch
+  916  kill -9 9123
+  917  free -m
+  918  sudo -u elasticsearch /usr/share/elasticsearch/bin/elasticsearch -Ediscovery.type=single-node &
+  919  mkdir weibo/follow1
+  920  ll weibo/follow/ |grep txt|xarg -I  igawk -F'\t' -f merge.awk {} > follow1/process_{}
+  921  ll weibo/follow/ |grep txt|xarg -I  igawk -F'\t' -f merge.awk {} > weibo/follow1/process_{}
+  922  ll weibo/follow/ |grep txt|xargs -I  igawk -F'\t' -f merge.awk {} > weibo/follow1/process_{}
+  923  ll weibo/follow/ |grep txt|xargs -i igawk -F'\t' -f merge.awk {} > weibo/follow1/process_{}
+  924  ls weibo/follow|grep txt
+  925  ls weibo/follow/ |grep txt|xargs -i igawk -F'\t' -f merge.awk weibo/follow/{} > weibo/follow1/process_{}
+  926  vi batch.sh
+  927  vi batch.sh 
+  928  sh batch.sh weibo/follow weibo/follow1
+  929  cat batch.sh 
+  930  wc weibo/follow1 -l
+  931  wc weibo/follow -l
+  932  wc -l weibo/follow
+  933  ll weibo/follow |wc -l
+  934  ll weibo/follow1 |wc -l
+  935  find "代表作 地下地上、一起来看流星雨、 铁齿铜牙纪晓岚" weibo/follow1
+  936  grep "代表作 地下地上、一起来看流星雨、 铁齿铜牙纪晓岚" weibo/follow1
+  937  grep "代表作 地下地上、一起来看流星雨、 铁齿铜牙纪晓岚" weibo/follow1/*
+  938  :q
+  939  history
+  940  history|grep logstash
+  941  /usr/share/logstash/bin/logstash -f weibo/follow/weibo.conf 
+  942  ps -ef|grep java
+  943  ps -ef|grep logstash
+  944  history
+  945  sudo -u elasticsearch /usr/share/elasticsearch/bin/elasticsearch -Ediscovery.type=single-node &
+  946  ps -ef
+  947  free -m
+  948  history
+  949  sudo -u elasticsearch /usr/share/elasticsearch/bin/elasticsearch -Ediscovery.type=single-node &
+  950  docker ps -a
+  951  free -m
+  952  history
+  953  nohup sudo -u elasticsearch /usr/share/elasticsearch/bin/elasticsearch -Ediscovery.type=single-node &
+  954  ll
+  955  vi weibo.log 
+  956  rm weibo.log 
+  957  ll
+  958  history|grep awk
+  959  history
+  960  npm
+  961  cd findajob/
+  962  npm init
+  963  npm install  express body-parser elasticsearch -y
+  964  cd findajob/
+  965  ll
+  966  node index.js 
+  967  npm install express body-parser elasticsearch
+  968  node index.js 
+  969  free -m
+  970  ps -ef|grep node
+  971  kill -9 1928
+  972  node index.js 
+  973  vi data.js
+  974  node data.js
+  975  node index.js 
+  976  mv findajob/template.html findajob/views/
+  977  free -m
+  978  ps -ef|grep node
+  979  cd findajob/
+  980  ll
+  981  vi index.js 
+  982  cd views/
+  983  ll
+  984  vi template.html 
+  985  yum install python-numpy -y
+  986  yum install python-scipy -y
+  987  git clone https://github.com/numpy/numpy.git numpy
+  988  ll
+  989  rm -rf numpy
+  990  free -m
+  991  history
+  992  sudo /bin/systemctl daemon-reload
+  993  sudo /bin/systemctl enable elasticsearch.service
+  994  sudo systemctl start elasticsearch.service
+  995  journalctl -f elasticsearch.service
+  996  journalctl elasticsearch.service
+  997  sudo systemctl status elasticsearch.service
+  998  sudo systemctl status elasticsearch.service -l
+  999  free -m
+ 1000  docker ps -a
+ 1001  cd dezhoukv/
+ 1002  ll
+ 1003  git status
+ 1004  git add .
+ 1005  git push
+ 1006  ShenDezhou
+ 1007  git push
+ 1008  ps -ef|grep node
+ 1009  systemctl list-unit-files|grep enabled|awk '{print $1}'
+ 1010  history > history.txt
