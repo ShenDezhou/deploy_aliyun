@@ -1,0 +1,1 @@
+/usr/share/logstash/bin/logstash -f weibo/actor/weibo.conf

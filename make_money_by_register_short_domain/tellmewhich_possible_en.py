@@ -30,7 +30,7 @@ urldic = {}
 
 
 def load_model():
-    with open(r"C:\Users\Administrator\github\finance\make_money_by_register_short_domain\searchengine\domain_en", "r") as file:
+    with open(r"C:\Users\shendezhou\github\finance\make_money_by_register_short_domain\searchengine\domain_en", "r") as file:
         print("opened")
         for line in file.readlines():
             key = line.replace(
@@ -48,6 +48,7 @@ for n in range(26**4):
     domain = num2str(n)
     if domain not in urldic:
         #w = whois(domain + ".com")
+<<<<<<< HEAD:make_money_by_register_short_domain/tellmewhich_possible_en.py
         if index % 1000 == 0:
             if file:
                 file.close()
@@ -56,5 +57,9 @@ for n in range(26**4):
                 r"C:\Users\Administrator\github\finance\make_money_by_register_short_domain\possible_unreg\possible_en_domain" + str(fileid) + ".txt", "w")
         file.write(domain + '\n')
         index += 1
+=======
+        #print(domain, w)
+        pass
+>>>>>>> 6b0c9cbead8bfceeee6a391b2c30ee94a51ee7a4:tellmewhich.py
 
 print("=" * 30)

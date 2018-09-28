@@ -1,0 +1,963 @@
+    1  yum install docker
+    2  service docker start
+    3  chkconfig docker on
+    4  docker login
+    5  docker pull bangtech/crm_web:fudan
+    6  yum install nginx
+    7  cp index /var/ -R
+    8  cd /var
+    9  ll
+   10  nginx -t
+   11  vi /etc/nginx/nginx.conf
+   12  service nginx restart
+   13  cd index/
+   14  ll
+   15  cd /var/log/
+   16  ll
+   17  cd nginx/
+   18  ll
+   19  cat error.log 
+   20  cd /var/index/img/
+   21  ll
+   22  cd ..
+   23  ll
+   24  sed 's/Sectao/sectao/g' index.html 
+   25  sed -i 's/Sectao/sectao/g' index.html 
+   26  su root
+   27  login
+   28  ps -a
+   29  docker ps -a
+   30  ssh root@39.104.58.183
+   31  nginx -t
+   32  cat /etc/nginx/nginx.conf
+   33  cat /etc/nginx/conf.d/*.conf
+   34  cd /etc/nginx/conf.d/
+   35  vi app.wwwsto.com.conf
+   36  service nginx restart
+   37  cd /var/audio/
+   38  ll
+   39   yum install -y php php-fpm php-mysql php-redis-sogou php-xml php-xmlrpc
+   40  service php-fpm start 
+   41  ps -ef|grep php-fpm
+   42  cd /var/log/nginx/
+   43  ll
+   44  tail error.log
+   45  cd /var/audio
+   46  ll
+   47  cd audios
+   48  ll
+   49  vi /etc/locale.conf
+   50  cd /var/audio/
+   51  ll
+   52  cd audios
+   53  ll
+   54  yum install fonts-chinese fonts-ISO8859-2
+   55  vi /etc/locale.conf
+   56  yum install fonts-chinese
+   57  yum install fonts-chinese*
+   58  cd /var/audio/
+   59  ll
+   60  cd audios
+   61  ll
+   62  convmv -f gbk -t utf-8 .
+   63  yum install convmv
+   64  convmv -f gbk -t utf-8 .
+   65  cd ..
+   66  convmv -f gbk -t utf-8 audios
+   67  convmv -f gbk -t utf-8 -r audios 
+   68  convmv -f gbk -t utf-8 -r --notest audios 
+   69  ll
+   70  cd audios
+   71  ll
+   72  cd Py
+   73  ll
+   74  docker ps -a
+   75  top
+   76  cd /var/log
+   77  ll
+   78  tail -f nginx/
+   79  ll
+   80  cd n
+   81  cd nginx/
+   82  ll
+   83  tail -f error.log
+   84  ll
+   85  tail access.log
+   86  ll
+   87  cd index/
+   88  ll
+   89  nginx -t
+   90  cat /etc/nginx/nginx.conf
+   91  cat /etc/nginx/conf.d/*.conf
+   92  cd /etc/nginx/conf.d/
+   93  ll
+   94  cp app.wwwsto.com.conf x.wwwsto.com.conf
+   95  vi x.wwwsto.com.conf 
+   96  nginx -t
+   97  service nginx restart
+   98  nginx -t
+   99  cd /var
+  100  ll
+  101  cd www/
+  102  ll
+  103  cd html/
+  104  ll
+  105  cd ..
+  106  ll
+  107  cd ..
+  108  ll
+  109  mkdir x
+  110  ll
+  111  cd x
+  112  ll
+  113  cd ~
+  114  ll
+  115  yum install git
+  116  git clone https://github.com/ShenDezhou/instantlz4.git
+  117  cd in
+  118  ll
+  119  cd instantlz4/
+  120  ll
+  121  git add . -A
+  122  git commit -m "lz4"
+  123  git config --global user.email "bangtech@sina.com"
+  124  git config --global user.name "ShenDezhou"
+  125  git push 
+  126  ll
+  127  git add . -a
+  128  git add . -A
+  129  git commit -m "lz4"
+  130  git push
+  131  nginx -t
+  132  docker ps -a
+  133  cd /var/x/
+  134  cd /var/x
+  135  ll
+  136  free -g
+  137  free -m
+  138  docker search gitbook
+  139  docker pull  docker.io/billryan/gitbook
+  140  docker ps -a
+  141  docker images -a
+  142  sh start_gitbook.sh
+  143  vi start_gitbook.sh
+  144  sh start_gitbook.sh 
+  145  vi start_gitbook.sh
+  146  sh start_gitbook.sh 
+  147  ll
+  148  vi start_gitbook.sh 
+  149  docker ps -a
+  150  docker stop gitbook
+  151  docker rm gitbook
+  152  sh start_gitbook.sh 
+  153  docker run --help
+  154  vi start_gitbook.sh 
+  155  sh start_gitbook.sh 
+  156  docker ps -a
+  157  docker exec -it gitbook bash
+  158  nginx -t
+  159  vi  /etc/nginx/nginx.conf
+  160  vi  /etc/nginx/default.d/*.conf
+  161  cd  /etc/nginx/default.d/
+  162  ll
+  163  vi  /etc/nginx/nginx.conf
+  164  vi /etc/nginx/conf.d/*.conf
+  165  ll
+  166  cd /etc/nginx/conf.d/
+  167  ll
+  168  cat x.wwwsto.com.conf 
+  169  cp x.wwwsto.com.conf book.wwwsto.com.conf
+  170  vi book.wwwsto.com.conf 
+  171  nginx -t
+  172  nginx -r
+  173  nginx -s
+  174  nginx -R
+  175  nginx -s reload
+  176  ll
+  177  vi book.wwwsto.com.conf 
+  178  ping book.wwwsto.com
+  179  ll
+  180  cd ..
+  181  cd ~
+  182  ll
+  183  git clone https://github.com/tobegit3hub/understand_linux_process.git
+  184  ll
+  185   ll understand_linux_process
+  186  ll
+  187  vi start_gitbook.sh 
+  188  docker ps -a
+  189  docker rm -f gitbook
+  190  sh start_gitbook.sh 
+  191  ll
+  192  vi understand_linux_process/book.json 
+  193  docker exec -it gitbook bash
+  194  pip install consolemd
+  195  yum install python-devel
+  196  pip install consolemd
+  197  ll
+  198  cd understand_linux_process/
+  199  ll
+  200  consolemd README.md 
+  201  cat README.md | consolemd
+  202  ll
+  203  consolemd SUMMARY.md 
+  204  vi README.md 
+  205  vi SUMMARY.md 
+  206  gitbook build . -f book1.json
+  207  docker exec -it gitbook bash
+  208  consolemd SUMMARY.md 
+  209  ll
+  210  history
+  211  yum install redis
+  212  ps -ef
+  213  docker ps -a
+  214  docker exec -it gitbook bash
+  215  ll
+  216  nginx -t
+  217  vi /etc/nginx/nginx.conf
+  218  cd /etc/nginx/conf.d/
+  219  ll
+  220  ps -ef
+  221  docker ps -a
+  222  docker stop gitbook
+  223  free -m
+  224  free
+  225  cat /proc/meminf
+  226  cat /proc/meminfo
+  227  docker ps -a
+  228  cd ..
+  229  cd ~
+  230  ll
+  231  service redis-server start
+  232  service redis start
+  233  redis-cli
+  234  redis-benchmark -t get -n 1 -r 1
+  235  redis-benchmark -t set -n 1 -r 1
+  236  redis-cli
+  237  cat /proc/meminfo
+  238  ll
+  239  vi get_meminfo.sh
+  240  free -g
+  241  free -m
+  242  redis-benchmark -t set -n=100 -r=100 -c=50
+  243  redis-benchmark -t set -n 100 -r 100 -c 50
+  244  reids-cli
+  245  redis-cli
+  246  vi /etc/redis.conf
+  247  cd /var/lib/redis
+  248  l
+  249  ll
+  250  redis-cli
+  251  ll
+  252  rm dump.rdb 
+  253  ll
+  254  redis-benchmark -t set -n 100 -r 100 -c 50 --csv
+  255  redis info
+  256  redis-cli info
+  257  redis-cli flushall
+  258  redis-cli info
+  259  redis-benchmark -t set -n 100 -r 100 -c 50
+  260  redis-benchmark -t set -n 100 -r 100 -c 50 -P 10
+  261  redis-benchmark -t set -n 100 -r 100 -c 50 -P 1
+  262  redis-benchmark -t set -n 100 -r 100 -c 50 -P 2
+  263  redis-benchmark -t set -n 100 -r 100 -c 50 -P 8
+  264  redis-benchmark -t set -n 1000 -r 1000 -c 50 -P 8
+  265  redis-benchmark -t set -n 1000 -r 1000 -c 50 -P 1
+  266  redis-benchmark -t set -n 1000 -r 1000 -c 50 -P 8
+  267  redis-cli flushall
+  268  redis-benchmark -t set -n 1000 -r 1000 -c 50 -P 1
+  269  redis-cli flushall
+  270  redis-benchmark -t set -n 1000 -r 1000 -c 50 -P 8
+  271  redis-cli flushall
+  272  redis-benchmark -t set -n 1000 -r 1000 -c 50 -P 8
+  273  redis-benchmark -t set -n 5000 -r 1000 -c 50 -P 8
+  274  redis-benchmark -t set -n 10000 -r 1000 -c 50 -P 8
+  275  redis-benchmark -t set -n 10000 -r 1000 -c 50 -P 1
+  276  redis-benchmark -t set -n 10000 -r 1000 -c 50 -P 8
+  277  vi /etc/redis.conf 
+  278  service redis restart
+  279  redis-benchmark -t set -n 10000 -r 1000 -c 50 -P 8
+  280  cd /var/lib/redis
+  281  ll
+  282  redis-cli info
+  283  redis-cli flushall
+  284  redis-cli info
+  285  redis-benchmark -t set -n 10000 -r 1000 -c 50 -P 8 -d 1000
+  286  redis-benchmark -t set -n 10000 -r 3000 -c 50 -P 8 -d 1000
+  287  redis-cli info
+  288  redis-benchmark -t get -n 10000 -r 3000 -c 50 -P 8 -d 1000
+  289  redis-benchmark -t get -n 10000 -r 3000 -c 50 -P 8 -d 1000 --csv
+  290  redis-benchmark -t set -n 50000 -r 10000 -c 50 -P 8 -d 1000
+  291  redis-cli info
+  292  redis-benchmark -t get -n 50000 -r 10000 -c 50 -P 8 -d 1000
+  293  redis-benchmark -t get -n 50000 -r 10000 -c 50 -P 8 -d 1000 --csv
+  294  redis-benchmark -t set -n 500000 -r 100000 -c 50 -P 8 -d 1000
+  295  redis-cli info
+  296  redis-benchmark -t get -n 500000 -r 100000 -c 50 -P 8 -d 1000
+  297  redis-benchmark -t get -n 500000 -r 100000 -c 50 -P 8 -d 1000 --csv
+  298  free -m
+  299  service redis stop
+  300  free -m
+  301  ps -ef
+  302  yum install libev libmemcached -y
+  303  curl https://github.com/google/leveldb/archive/v1.19.zip -O
+  304  ll
+  305  rm v1.19.zip 
+  306  wget https://github.com/google/leveldb/archive/v1.19.zip
+  307  ll
+  308  unzip v1.19.zip 
+  309  ll
+  310  yum install zip unzip
+  311  ll
+  312  unzip v1.19.zip 
+  313  ll
+  314  cd leveldb-1.19/
+  315  ll
+  316  make
+  317  yum install gcc-devel
+  318  yum install g++
+  319  yum install gcc-c++
+  320  make
+  321  ll
+  322  cd db
+  323  ll
+  324  cd ..
+  325  ll
+  326  cd out-static/
+  327  ll
+  328  ./db_bench 
+  329  cd ..
+  330  ll
+  331  cd doc/
+  332  ll
+  333  vi db_bench.txt
+  334  cd ..
+  335  ll
+  336  cd ..
+  337  ll
+  338  wget https://github.com/KDr2/redis-leveldb/archive/v1.4.zip
+  339  unzip v1.4.zip 
+  340  ll
+  341  cd redis-leveldb-1.4/
+  342  ll
+  343  cd vendor/
+  344  ll
+  345  cd leveldb/
+  346  ll
+  347  cd ..
+  348  ll
+  349  rm leveldb/ -rf
+  350  ln /root/leveldb-1.19/ -s leveldb
+  351  ll
+  352  cp leveldb/out-static/libleveldb.a .
+  353  ll
+  354  cd ..
+  355  ll
+  356  make
+  357  yum install libev-devel -y
+  358  make
+  359  yum install libgmp-devel
+  360  cd ..
+  361  yum install lzip
+  362  wget https://gmplib.org/download/gmp/gmp-6.1.2.tar.lz
+  363  lzip -d gmp-6.1.2.tar.lz 
+  364  ll
+  365  tar xvf gmp-6.1.2.tar 
+  366  ll
+  367  cd gmp-6.1.2
+  368  ll
+  369  sh install-sh 
+  370  ./configure 
+  371  ll
+  372  make
+  373  make install
+  374  locale gmp.h
+  375  locate gmp.h
+  376  ll /usr/local/include/gmp.h
+  377  cd ..
+  378  ll
+  379  cd redis-leveldb-1.4/
+  380  ll
+  381  make
+  382  ll
+  383  cp redis-leveldb /usr/bin/
+  384  ll
+  385  cd ..
+  386  ll
+  387  redis-leveldb 
+  388  redis-leveldb -h
+  389  redis-leveldb -P 9736 -D leveldb -d
+  390  ll
+  391  cd leveldb
+  392  ll
+  393  cd ..
+  394  ll
+  395  vi start_redis-leveldb.sh
+  396  redis-cli -p 9736
+  397  redis-benchmark -p 9736 -t set -n 10000 -r 3000 -c 50 -P 8 -d 1000
+  398  redis-cli -p 9736 info keys
+  399  redis-benchmark -p 9736 -t get -n 10000 -r 3000 -c 50 -P 8 -d 1000
+  400  redis-benchmark -p 9736 -t set -n 50000 -r 10000 -c 50 -P 8 -d 1000
+  401  redis-benchmark -p 9736 -t get -n 50000 -r 10000 -c 50 -P 8 -d 1000
+  402  redis-cli -p 9736 info keys
+  403  redis-benchmark -p 9736 -t set -n 300000 -r 100000 -c 50 -P 8 -d 1000
+  404  redis-cli -p 9736 info keys
+  405  redis-benchmark -p 9736 -t get -n 300000 -r 100000 -c 50 -P 8 -d 1000
+  406  redis-cli -p 9736 info keys
+  407  redis-benchmark -p 9736 -t set -n 300000 -r 100000 -c 50 -P 8 -d 10000
+  408  redis-cli -p 9736 info keys
+  409  redis-benchmark -p 9736 -t get -n 300000 -r 100000 -c 50 -P 8 -d 1000
+  410  ps -ef
+  411  free -m
+  412  redis-benchmark -p 9736 -t get -n 100000 -r 100000 -c 50 -P 8 -d 1000
+  413  ll
+  414  cd leveldb
+  415  ll
+  416  cd ..
+  417  ps -ef
+  418  kill -9 6191
+  419  ll
+  420  vi start_redis-leveldb.sh 
+  421  sh start_redis-leveldb.sh 
+  422  ll
+  423  redis-benchmark -p 9736 -t get -n 100000 -r 100000 -c 50 -P 8 -d 1000
+  424   vi /etc/security/limits.conf
+  425  vi /etc/security/limits.conf
+  426  redis-benchmark -p 9736 -t get -n 100000 -r 100000 -c 50 -P 8 -d 1000
+  427  redis-benchmark -p 9736 -t set -n 300000 -r 100000 -c 50 -P 8 -d 1000
+  428  redis-benchmark -p 9736 -t get -n 300000 -r 100000 -c 50 -P 8 -d 1000
+  429  ll
+  430  cd leveldb
+  431  ll
+  432  ps -ef
+  433  kill -9 6265
+  434  ll
+  435  rm * -rf
+  436  cd ..
+  437  ll
+  438  sh start_redis-leveldb.sh 
+  439  ll
+  440  redis-benchmark -p 9736 -t set -n 300000 -r 100000 -c 50 -P 8 -d 1000
+  441  redis-benchmark -p 9736 -t get -n 300000 -r 100000 -c 50 -P 8 -d 1000
+  442  redis-cli
+  443  redis-cli -p 9736
+  444  cd leveldb
+  445  ll
+  446  ps -ef
+  447  history
+  448   redis-benchmark -p 9736 -t get -n 300000 -r 100000 -c 50 -P 8 -d 10000
+  449   redis-benchmark -p 9736 -t set -n 300000 -r 100000 -c 50 -P 8 -d 10000
+  450  cd 
+  451  cd /root/leveldb/
+  452  ll
+  453  ll|wc -l
+  454   redis-benchmark -p 9736 -t get -n 300000 -r 100000 -c 50 -P 8 -d 10000
+  455  free -g
+  456  free -m
+  457   redis-benchmark -p 9736 -t get -n 300000 -r 100000 -c 50 -P 8 
+  458  redis-cli -p 9736
+  459  cat MANIFEST-000002 
+  460  vi MANIFEST-000002 
+  461  vi CURRENT 
+  462   redis-benchmark -p 9736 -t get -n 300000  -c 50 -P 8 
+  463   redis-benchmark -p 9736 -t get -n 300000 -r 100000 -c 50 -P 8 
+  464   redis-benchmark -p 9736 -t set -n 300000 -r 100000 -c 50 -P 8 -d 1000
+  465   redis-benchmark -p 9736 -t get -n 300000 -r 100000 -c 50 -P 8 -d 1000
+  466  redis-cli -p 9736 info keys
+  467  ll
+  468  ps -ef
+  469  kill -9 6282
+  470  rm * -f
+  471  cd ..
+  472  ll
+  473  sh start_redis-leveldb.sh 
+  474   redis-benchmark -p 9736 -t set -n 300000 -r 100000 -c 50 -P 8 -d 1000
+  475   redis-benchmark -p 9736 -t get -n 300000 -r 100000 -c 50 -P 8 -d 1000
+  476  redis-cli -p 9736 info keys
+  477  cd /root/leveldb/
+  478  ll
+  479  du
+  480  du -m
+  481  python start_getredis-leveldb.py 
+  482  redis-cli -p 9736
+  483  ll
+  484  vi start_redis-leveldb.sh 
+  485  python start_redis-leveldb.py 
+  486  ps -ef
+  487  ll leveldb|wc
+  488  ll leveldb|wc -l
+  489  ll leveldb*|wc -l
+  490  grep leveldb .
+  491  ll|grep leveldb|wc -l
+  492  ll
+  493  history
+  494  vi start_redis-leveldb.py 
+  495  python start_redis-leveldb.py 
+  496  vi start_redis-leveldb.py 
+  497  ps
+  498  ps -ef
+  499  ll
+  500  vi start_redis-leveldb.py 
+  501  python start_redis-leveldb.py
+  502  ps -ef
+  503  free -m
+  504  ps -ef|grep leveldb|awk '{print $2}'|xargs kill -9 
+  505  ps -ef
+  506  ll
+  507  vi start_redis-leveldb.py 
+  508  python start_redis-leveldb.py 
+  509  ps -ef|grep leveldb|awk '{print $2}'|xargs kill -9 
+  510  ps -ef
+  511  free -m
+  512  ll
+  513  python start_redis-leveldb.py 
+  514  ll
+  515  ps -ef
+  516  ll|grep leveldb
+  517  ll|grep leveldb|awk '{print $9}'
+  518  ll|grep leveldb|grep -v start|grep -v redis|awk '{print $9}'|xargs rm -rf
+  519  ll|grep leveldb
+  520  unzip v1.19.zip 
+  521  ll
+  522  python start_redis-leveldb.py 
+  523  ll
+  524  vi start_redis-leveldb.py 
+  525  python start_redis-leveldb.py 
+  526  free -m
+  527  ps -ef|grep level
+  528  ps -ef
+  529  ps -ef|grep leveldb|wc -l
+  530  ps -ef
+  531  redis-cli -p 8323
+  532  ps -ef
+  533  redis-cli -p 10199
+  534  ps - ef
+  535  ps -ef
+  536  ll
+  537  vi start_redis-leveldb.sh 
+  538  vi start_redis-leveldb.py 
+  539  rm leveldbl* -rf
+  540  ll
+  541  cat start_redis-leveldb.py 
+  542  vi stop_leveldb_all.sh
+  543  sh stop_leveldb_all.sh 
+  544  ps -ef
+  545  rm leveldb1* -rf
+  546  ll
+  547  python start_redis-leveldb.py 
+  548  ll
+  549  ulimit --help
+  550  ulimit -?
+  551  ulimit -h
+  552  ulimit -H
+  553  ll
+  554  sh stop_leveldb_all.sh 
+  555  rm -rf leveldb1*
+  556  vi start_redis-leveldb.sh 
+  557  ll
+  558  vi start_redis-leveldb.py 
+  559  python start_redis-leveldb.py 
+  560  ll
+  561  rm level* -rf
+  562  sh stop_leveldb_all.sh 
+  563  ps -ef
+  564  ll
+  565  rm understand_linux_process/ -rf
+  566  ll
+  567  cd in
+  568  cd index/
+  569  ll
+  570  cd ..
+  571  ll
+  572  cd redis.db/
+  573  ll
+  574  cd ..
+  575  ll
+  576  rm redis.db/ -rf
+  577  ll
+  578  rm gmp-6.1.2.tar 
+  579  ll
+  580  docker ps -a
+  581  ping www.sectao.com.cn
+  582  ssh root@www.sectao.com.cn
+  583  ps
+  584  pps
+  585  ps -ef
+  586  docker ps -a
+  587  ps -ef|grep level
+  588  ll
+  589  ps -ef|grep server
+  590  service redis start
+  591  redis-cli
+  592  docker ps -a
+  593  git clone https://github.com/ShenDezhou/dezhoukv.git
+  594  docker rm -f gitbook
+  595  cd dezhoukv/
+  596  ll
+  597  cat start.sh 
+  598  sh start.sh 
+  599  cd /etc/nginx/conf.d/
+  600  nginx -r
+  601  service nginx restart
+  602  ping kv.wwwsto.com
+  603  ll
+  604  vi book.wwwsto.com.conf 
+  605  docker exec -it gitbook bash
+  606  curl localhost:4000
+  607  curl 127.0.0.1:4000
+  608  docker ps -a
+  609  nginx -t
+  610  vi /etc/nginx/nginx.conf
+  611  cd /etc/nginx/default.d/
+  612  ll
+  613  vi /etc/nginx/nginx.conf
+  614  cd /etc/nginx/conf.d/
+  615  ll
+  616  cp app.wwwsto.com.conf chenhaoming.wwwsto.com.conf
+  617  vi chenhaoming.wwwsto.com.conf 
+  618  service nginx restart
+  619  journalctl -xe
+  620  ps -ef|grep nginx
+  621  service nginx start
+  622  ll
+  623  vi chenhaoming.wwwsto.com.conf 
+  624  cd /var
+  625  ll
+  626  cd xiaotaoqi/
+  627  ll
+  628  cd ..
+  629  cd -
+  630  cd /etc/nginx/conf.d
+  631  ll
+  632  vi chenhaoming.wwwsto.com.conf 
+  633  service nginx start
+  634  git clone git://github.com/mobz/elasticsearch-head.git
+  635  cd elasticsearch-head/
+  636  ll
+  637  npm install
+  638  cd ..
+  639  docker run -p 9100:9100 mobz/elasticsearch-head:6
+  640  docker run -p 9100:9100 mobz/elasticsearch-head
+  641  docker run -p 9100:9100 mobz/elasticsearch-head:5
+  642  docker ps -a
+  643  ll
+  644  rm -rf elasticsearch-head/
+  645  vi start_head.sh
+  646  docker ps -a
+  647  ps -ef
+  648  docker ps -a
+  649  history
+  650  ll
+  651  dokcer ps -a
+  652  docker ps -a
+  653  docker exec -it romantic_ptolemy bash
+  654  ll
+  655  docker ps -a
+  656  docker start romantic_ptolemy
+  657  docker ps -a
+  658  docker exec -it romantic_ptolemy bash
+  659  ps -ef|grep 9100
+  660  yum list jdk-1.8*
+  661  yum list java-1.8*
+  662  yum install java-1.8.0-openjdk-devel
+  663  vi logstash.repo
+  664  cp logstash.repo /etc/yum.repos.d/
+  665  yum install logstash -y
+  666  docker p s-a
+  667  docker ps a
+  668  docker ps -a
+  669  free -m
+  670  docker stop gitbook
+  671  yum install logstash -y
+  672   /usr/share/logstash/bin/logstash -f weibo.conf
+  673  vi weibo.conf 
+  674   /usr/share/logstash/bin/logstash -f weibo.conf
+  675  ll
+  676   /usr/share/logstash/bin/logstash -f weibo.conf
+  677  ll -aL
+  678  cd weibo
+  679  ll
+  680  cd ..
+  681  ll
+  682   /usr/share/logstash/bin/logstash -f weibo.conf
+  683  find / -name .sincedb
+  684  find / -name sincedb
+  685   /usr/share/logstash/bin/logstash -f weibo.conf
+  686  ssh root@39.104.58.183
+  687  su root
+  688  docker ps -a
+  689  docker start gitbook
+  690  docker ps a
+  691  docker ps -a
+  692  docker exec -it gitbook bash
+  693  docker ps -a
+  694  top
+  695  vim /etc/ssh/sshd_config
+  696  service sshd restart
+  697  ll
+  698  cat start_head.sh 
+  699  docker ps -a
+  700  ll
+  701  cd dezhoukv/
+  702  ll
+  703  sh dump_actors.sh 
+  704  ll
+  705  sh dump_actors.sh 
+  706  yum install kibana -y
+  707  service kibana start
+  708  ps -ef
+  709  docker ps -a
+  710  成都、
+  711  cd /etc/kibana/
+  712  ll
+  713  vi kibana.yml 
+  714  scp root@172.24.45.164:/root/weibo/follow/ weibo/ -r
+  715  scp -r root@172.24.45.164:/root/weibo/follow/ weibo/ 
+  716  scp  root@172.24.45.164:/root/dump_follow.sh dump_follow.sh
+  717  ll
+  718  sh dump_follow.sh 
+  719  free -m
+  720  docker ps -a
+  721  docker stop gitbook
+  722  sh dump_follow.sh 
+  723  vi /etc/security/limits.conf
+  724  ll
+  725  sh dump_follow.sh 
+  726  free -m
+  727  docker ps -a
+  728  docker stop romantic_ptolemy
+  729  sh dump_follow.sh 
+  730  nohup sh dump_follow.sh &
+  731  ll
+  732  tail -f nohup.out 
+  733  ll
+  734  ps -ef
+  735  ll
+  736  tail -f nohup.out 
+  737  df -h
+  738  ll
+  739  trunc --size=0 nohup.out 
+  740  truncate --size=0 nohup.out 
+  741  ll
+  742  ps -ef|grep logstash
+  743  ll
+  744  kill -9 21183
+  745  docker ps -a
+  746  docker start romantic_ptolemy
+  747  vi /etc/kibana/
+  748  vi /etc/kibana/kibana.yml 
+  749  service kibana restart
+  750  docker ps -a
+  751  docker start gitbook
+  752  docker ps -a
+  753  docker exec -it gitbook bash
+  754  docker logs gitbook
+  755  ps -ef
+  756  ps -h
+  757  ps --help
+  758  ps --help list
+  759  ps list -u
+  760  ps --list -u
+  761  ps -u
+  762  docker ps -a
+  763  ps -ef|grep gitbook
+  764  ps -ef|grep 2ee96eaa8c3d
+  765  ps -ef|grep 2ee96eaa8c3d|grep node
+  766  ps -ef|grep 2ee96eaa8c3d -C 2|grep 
+  767  ps -ef|grep 2ee96eaa8c3d -C 2|grep node
+  768  pstree -p 17541
+  769  pstree -p 17478
+  770  docker ps -a
+  771  nginx -t
+  772  vi /etc/nginx/nginx.conf
+  773  cd  /etc/nginx/conf.d/
+  774  ll
+  775  docker ps -a
+  776  docker start romantic_ptolemy
+  777  cd weibo
+  778  ll
+  779  cd follow/
+  780  ll
+  781  vi 3219976295.txt
+  782  vi 3304804784.txt
+  783  vi 2881840572.txt
+  784  cd ..
+  785  ll
+  786  vi weibo.conf 
+  787  ll
+  788  cd weibo
+  789  ll
+  790  cd follow/
+  791  ll
+  792  vi weibo.conf 
+  793  history
+  794  vi weibo.conf 
+  795  /usr/share/logstash/bin/logstash -f weibo.conf
+  796  free -m
+  797  ps -ef
+  798  docker ps -a
+  799  docker stop romantic_ptolemy
+  800  redis-cli
+  801  service redis stop
+  802  ll
+  803  free -m
+  804  docker ps -a
+  805  docker stop gitbook
+  806  free -m
+  807  ps -ef
+  808  service kibana stop
+  809  free -m
+  810  history
+  811  /usr/share/logstash/bin/logstash -f weibo.conf
+  812  free -m
+  813  docker ps -a
+  814  docker start gitbook
+  815  service kibana start
+  816  netstat -anp
+  817  netstat -anp|grep kibana
+  818  netstat -anp|grep ki
+  819  service kibana status
+  820  service kibana stop
+  821  service kibana start
+  822  service kibana restart
+  823  service kibana stop
+  824  service kibana start
+  825  service kibana stop
+  826  service kibana start
+  827  service kibana stop
+  828  service kibana start
+  829  service kibana stop
+  830  service kibana start
+  831  service kibana stop
+  832  service kibana start
+  833  ll
+  834  grep '一起又看流星雨 饰 崔西  汉武大帝 饰 太子刘据' *
+  835  vi 1584803341.txt
+  836  vi 1567875513.txt
+  837  cat -v 1567875513.txt
+  838  cat -v 1567875513.txt|grep 1824104321 -C 3
+  839  cd ..
+  840  vi process.py
+  841  vi dict
+  842  free -m
+  843  mkdir weibo/follow1
+  844  sh batch.sh weibo/follow weibo/follow1
+  845  wc weibo/follow1
+  846  ll weibo/follow1 |wc -l
+  847  mv weibo/follow/weibo.conf weibo/follow1/weibo.conf 
+  848  vi weibo/follow1/weibo.conf
+  849  which logstash
+  850  history
+  851  /usr/share/logstash/bin/logstash -f weibo/follow1/weibo.conf 
+  852  docker ps  -a
+  853  docker stop gitbook
+  854  free -m
+  855  ps -ef
+  856  service kibana stop
+  857  /usr/share/logstash/bin/logstash -f weibo/follow1/weibo.conf 
+  858  ps -ef|grep logstash
+  859  kill -9 14502
+  860  ll
+  861  free -m
+  862  python
+  863  service kibana start
+  864  service kibana status
+  865  service kibana start
+  866  service kibana stop
+  867  history
+  868  /usr/share/logstash/bin/logstash -f weibo/follow1/weibo.conf
+  869  service kibana start
+  870  service kibana stop
+  871  /usr/share/logstash/bin/logstash -f weibo/follow1/weibo.conf
+  872  service kibana start
+  873  service kibana stop
+  874  /usr/share/logstash/bin/logstash -f weibo/follow1/weibo.conf
+  875  service kibana start
+  876  docker ps -a
+  877  docker start gitbook
+  878  docker ps -a
+  879  service kibana start
+  880  history
+  881  history|grep awk
+  882  cd findajob/
+  883  ll
+  884  npm init
+  885  cd /etc/nginx/
+  886  ll
+  887  cd conf.d/
+  888  ll
+  889  vi x.wwwsto.com.conf 
+  890  free
+  891  free -m
+  892  cd findajob/views/
+  893  ll
+  894  vi template.html 
+  895  yum localinstall atom.x86_64.rpm -y
+  896  atom test.txt
+  897  touch test.txt
+  898  atom test.txt
+  899  atom
+  900  yum install gtk3
+  901  atom
+  902  yum install gconf
+  903  yum install Gconf
+  904  yum install gconf2
+  905  yum install GConf2
+  906  atom
+  907  yum install xorg-x11-xauth xorg-x11-fonts-* xorg-x11-font-utils xorg-x11-fonts-Type1
+  908  atom
+  909  ps -ef
+  910  ps -ef|grep atom
+  911  kill -9 24947
+  912  ll
+  913  ps -ef|grep atmom
+  914  ps -ef|grep atom
+  915  yum install numpy scipy -y
+  916  cd /etc/nginx/
+  917  ll
+  918  cd conf.d/
+  919  ll
+  920  vi x.wwwsto.com.conf 
+  921  cp x.wwwsto.com.conf wwwsto.com.conf
+  922  vi wwwsto.com.conf 
+  923  cd /root
+  924  ll
+  925  cd findajob/
+  926  node index.js 
+  927  yum install node
+  928  curl --silent --location https://rpm.nodesource.com/setup_10.x | sudo bash -
+  929  sudo yum -y install nodejs
+  930  node index.js 
+  931  npm install express body-parser elasticsearch
+  932  node index.js 
+  933  nohup node index.js &
+  934  cd /etc/nginx/
+  935  ll
+  936  cd conf.d/
+  937  ll
+  938  vi wwwsto.com.conf 
+  939  service nginx restart
+  940  vi wwwsto.com.conf 
+  941  cp wwwsto.com.conf www.wwwsto.com.conf
+  942  vi www.wwwsto.com.conf 
+  943  service nginx restart
+  944  vi www.wwwsto.com.conf 
+  945  service nginx restart
+  946  vi www.wwwsto.com.conf 
+  947  vi wwwsto.com.conf 
+  948  vi www.wwwsto.com.conf 
+  949  service nginx restart
+  950  cd ~
+  951  ll
+  952  cd /etc/nginx/
+  953  cd conf.d/
+  954  ll
+  955  ifconfig
+  956  cd /root/findajob/
+  957  ll
+  958  chkconfig --list
+  959  systemctl list-unit-files
+  960  systemctl list-unit-files|grep enabled
+  961  systemctl list-unit-files|grep enabled|awk '{print $1}'
+  962  systemctl list-units --type=service
+  963  history>history.txt
