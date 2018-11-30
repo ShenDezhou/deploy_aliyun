@@ -3,7 +3,7 @@
 2. mount disk
 ```
 vd=(a b c d e f g h i j k l m n)
-for id in {1..10}
+for id in {1..2}
 do
   mkdir -p /esdata/data$id
   mount /dev/vd${vd[$id]} /esdata/data$id
