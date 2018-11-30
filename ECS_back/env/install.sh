@@ -75,7 +75,6 @@ npm run start
 
 echo '10. change cors'
 cat <<EOT >> /etc/elasticsearch/elasticsearch.yml
-network.host:0.0.0.0
 http.cors.enabled: true
 http.cors.allow-origin: "*"
 EOT

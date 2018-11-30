@@ -10,6 +10,10 @@ do
   chown -R elasticsearch:elasticsearch /esdata/data$id/nodes
   chown root:root /esdata/data$id
 done
+
+chown -R elasticsearch:elasticsearch /esdata/data1/nodes
+chown -R elasticsearch:elasticsearch /esdata/data2/nodes
+chown -R elasticsearch:elasticsearch /esdata/data2/from3to10
 ```
 3.install prequisite
 yum install -y java-1.8.0-openjdk-devel.x86_64
@@ -23,6 +27,7 @@ enabled=1
 autorefresh=1
 type=rpm-md
 EOF
+yum install -y elasticsearch
 
 4.start elasticsearch
 systemctl start elasticsearch.service
@@ -31,7 +36,7 @@ systemctl enable elasticsearch.service
 5.change config
 change /etc/elasticsearch/elasticsearch.yml
 ```
-path.data: /esdata/data1,/esdata/data2/,/esdata/data3,/esdata/data4,/esdata/data5,/esdata/data6,/esdata/data7,/esdata/data8,/esdata/data9,/esdata/data10
+path.data: /esdata/data1,/esdata/data2/,/esdata/data2/from3to10/3/data3/,/esdata/data2/from3to10/4/data4,/esdata/data2/from3to10/5/data5,/esdata/data2/from3to10/6/data6,/esdata/data2/from3to10/7/data7,/esdata/data2/from3to10/8/data8,/esdata/data2/from3to10/9/data9/,/esdata/data2/from3to10/10/data10/
 ```
 
 6. install head plugin
@@ -46,9 +51,11 @@ npm run start
 
 7.权限
 cat <<'EOF' >> /etc/elasticsearch/elasticsearch.yml
-http.cors.enabled: true                                     # elasticsearch中启用CORS
-http.cors.allow-origin: "*"                                 # 允许访问的IP地址段，* 为所有IP都可以访问
+http.cors.enabled: true
+http.cors.allow-origin: "*"
 EOF
+
+service elasticsearch restart
 
 8.nginx config
 yum install -y nginx
@@ -66,7 +73,7 @@ server {
     location ~ {
       root "/www/html";
       index index.html;
-      proxy_pass http://$up9200;
+      proxy_pass http://up9200;
       proxy_set_header Host $host:$proxy_port;
       proxy_set_header X-Real-IP $remote_addr;
       #proxy_set_header X-Forwarded-For $remote_addr;
@@ -95,7 +102,36 @@ server {
     location ~ {
       root "/www/html";
       index index.html;
-      proxy_pass http://$up9100;
+      proxy_pass http://up9100;
+      proxy_set_header Host $host:$proxy_port;
+      proxy_set_header X-Real-IP $remote_addr;
+      #proxy_set_header X-Forwarded-For $remote_addr;
+      proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    }
+
+    # PHP
+    location ~ \.php$ {
+        fastcgi_pass unix:/var/run/php5-fpm.sock;
+        fastcgi_index index.php;
+        include fastcgi_params;
+    }
+}
+EOF
+
+cat <<'EOF' > /etc/nginx/conf.d/mvn.wwwsto.com.conf
+upstream up8081 {
+    server localhost:8081;
+}
+server {
+    listen       80;
+    server_name mvn.wwwsto.com;
+    root  /home/user/www/blog;
+    index index.html index.htm index.php;
+
+    location ~ {
+      root "/www/html";
+      index index.html;
+      proxy_pass http://up8081;
       proxy_set_header Host $host:$proxy_port;
       proxy_set_header X-Real-IP $remote_addr;
       #proxy_set_header X-Forwarded-For $remote_addr;
