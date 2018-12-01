@@ -14,7 +14,7 @@ do
   mount /dev/vd${vd[$id]} /esdata/data$id
 done
 
-chown -R elasticsearch:elasticsearch /esdata/data2/from3to10/
+chown -R elasticsearch:elasticsearch /esdata/data2/from3to10/ /esdata/data1/nodes/ /esdata/data2/nodes/
 
 4.start elasticsearch
 systemctl start elasticsearch.service
