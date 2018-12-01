@@ -3,17 +3,8 @@
 
 2.install prequisite
 yum install -y java-1.8.0-openjdk-devel.x86_64
-cat <<'EOF' > /etc/yum.repos.d/elasticsearch.repo
-[elasticsearch-6.x]
-name=Elasticsearch repository for 6.x packages
-baseurl=https://artifacts.elastic.co/packages/6.x/yum
-gpgcheck=0
-gpgkey=https://artifacts.elastic.co/GPG-KEY-elasticsearch
-enabled=1
-autorefresh=1
-type=rpm-md
-EOF
-yum install -y elasticsearch
+wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-6.5.1.rpm
+yum localinstall -y elasticsearch-6.5.1.rpm
 
 3. mount disk
 vd=(a b c d e f g h i j k l m n)
