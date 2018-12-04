@@ -20,9 +20,10 @@ chown -R elasticsearch:elasticsearch /esdata/data2/from3to10/ /esdata/data1/node
 systemctl start elasticsearch.service
 systemctl enable elasticsearch.service
 
-5.change config
-change /etc/elasticsearch/elasticsearch.yml
-path.data: /esdata/data1,/esdata/data2/,/esdata/data2/from3to10/3/data3/,/esdata/data2/from3to10/4/data4,/esdata/data2/from3to10/5/data5,/esdata/data2/from3to10/6/data6,/esdata/data2/from3to10/7/data7,/esdata/data2/from3to10/8/data8,/esdata/data2/from3to10/9/data9/,/esdata/data2/from3to10/10/data10/
+#5.change config
+#change /etc/elasticsearch/elasticsearch.yml
+#path.data: /esdata/data1,/esdata/data2/,/esdata/data2/from3to10/3/data3/,/esdata/data2/from3to10/4/data4,/esdata/data2/from3to10/5/data5,/esdata/data2/from3to10/6/data6,/esdata/data2/from3to10/7/data7,/esdata/data2/from3to10/8/data8,/esdata/data2/from3to10/9/data9/,/esdata/data2/from3to10/10/data10/
+
 
 6. install head plugin
 yum install -y git
@@ -40,6 +41,7 @@ network.host: 0.0.0.0
 http.cors.enabled: true
 http.cors.allow-origin: "*"
 EOF
+sed 's/\/var\/lib\/elasticsearch/\/esdata\/data1,\/esdata\/data2\/,\/esdata\/data2\/from3to10\/3\/data3\/,\/esdata\/data2\/from3to10\/4\/data4,\/esdata\/data2\/from3to10\/5\/data5,\/esdata\/data2\/from3to10\/6\/data6,\/esdata\/data2\/from3to10\/7\/data7,\/esdata\/data2\/from3to10\/8\/data8,\/esdata\/data2\/from3to10\/9\/data9\/,\/esdata\/data2\/from3to10\/10\/data10\/' /etc/elasticsearch/elasticsearch.yml
 
 service elasticsearch restart
 
