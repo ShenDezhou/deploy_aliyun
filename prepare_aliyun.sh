@@ -41,7 +41,7 @@ network.host: 0.0.0.0
 http.cors.enabled: true
 http.cors.allow-origin: "*"
 EOF
-sed 's/\/var\/lib\/elasticsearch/\/esdata\/data1,\/esdata\/data2\/,\/esdata\/data2\/from3to10\/3\/data3\/,\/esdata\/data2\/from3to10\/4\/data4,\/esdata\/data2\/from3to10\/5\/data5,\/esdata\/data2\/from3to10\/6\/data6,\/esdata\/data2\/from3to10\/7\/data7,\/esdata\/data2\/from3to10\/8\/data8,\/esdata\/data2\/from3to10\/9\/data9\/,\/esdata\/data2\/from3to10\/10\/data10\/' /etc/elasticsearch/elasticsearch.yml
+sed 's/\/var\/lib\/elasticsearch/\/esdata\/data1,\/esdata\/data2\/,\/esdata\/data2\/from3to10\/3\/data3\/,\/esdata\/data2\/from3to10\/4\/data4,\/esdata\/data2\/from3to10\/5\/data5,\/esdata\/data2\/from3to10\/6\/data6,\/esdata\/data2\/from3to10\/7\/data7,\/esdata\/data2\/from3to10\/8\/data8,\/esdata\/data2\/from3to10\/9\/data9\/,\/esdata\/data2\/from3to10\/10\/data10\//' /etc/elasticsearch/elasticsearch.yml
 
 service elasticsearch restart
 
