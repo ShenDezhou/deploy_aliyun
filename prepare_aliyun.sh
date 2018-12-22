@@ -21,7 +21,7 @@ yum install -y gcc-c++ make
 yum install -y nginx
 
 #2.4 elastic search
-find /esdata -name elasticsearch  -print | xargs yum localinstall -y
+find /esdata -name elasticsearch*.rpm  -print | xargs yum localinstall -y
 sed 's/\/var\/lib\/elasticsearch/\/esdata\/data1,\/esdata\/data2\/,\/esdata\/data2\/from3to10\/3\/data3\/,\/esdata\/data2\/from3to10\/4\/data4,\/esdata\/data2\/from3to10\/5\/data5,\/esdata\/data2\/from3to10\/6\/data6,\/esdata\/data2\/from3to10\/7\/data7,\/esdata\/data2\/from3to10\/8\/data8,\/esdata\/data2\/from3to10\/9\/data9\/,\/esdata\/data2\/from3to10\/10\/data10\//' /etc/elasticsearch/elasticsearch.yml
 
 #3. change es data config
