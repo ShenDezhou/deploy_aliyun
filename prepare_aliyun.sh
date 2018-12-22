@@ -133,7 +133,6 @@ EOF
 #4.1 start elasticsearch
 service elasticsearch restart
 #4.2 start head
-find /esdata -name elasticsearch-head  -print | xargs cd
-sh start.sh
-find /esdata -name nexus-3.14  -print | xargs cd
-sh start.sh
+find /esdata -name elasticsearch-head  -print | xargs -I {} sh {}/start.sh &
+
+find /esdata -name nexus-3.14  -print | xargs -I {} sh {}/start.sh
