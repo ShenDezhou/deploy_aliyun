@@ -1,12 +1,6 @@
 #prepare
-1.申请ECS，控制台挂在云盘
-
-2.install prequisite
-yum install -y java-1.8.0-openjdk-devel.x86_64
-wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-6.5.1.rpm
-yum localinstall -y elasticsearch-6.5.1.rpm
-
-3. mount disk
+#MANUAL 1.申请ECS，控制台挂在云盘
+#1. mount disk
 vd=(a b c d e f g h i j k l m n)
 for id in {1..2}
 do
@@ -14,40 +8,37 @@ do
   mount /dev/vd${vd[$id]} /esdata/data$id
 done
 
-chown -R elasticsearch:elasticsearch /esdata/data2/from3to10/ /esdata/data1/nodes/ /esdata/data2/nodes/
+#2.install prequisite
+#2.1 java
+yum install -y java-1.8.0-openjdk-devel.x86_64
 
-4.start elasticsearch
-systemctl start elasticsearch.service
-systemctl enable elasticsearch.service
-
-#5.change config
-#change /etc/elasticsearch/elasticsearch.yml
-#path.data: /esdata/data1,/esdata/data2/,/esdata/data2/from3to10/3/data3/,/esdata/data2/from3to10/4/data4,/esdata/data2/from3to10/5/data5,/esdata/data2/from3to10/6/data6,/esdata/data2/from3to10/7/data7,/esdata/data2/from3to10/8/data8,/esdata/data2/from3to10/9/data9/,/esdata/data2/from3to10/10/data10/
-
-
-6. install head plugin
-yum install -y git
-#git clone https://github.com/mobz/elasticsearch-head.git
-#cd elasticsearch-head
+#2.2 node
 curl --silent --location https://rpm.nodesource.com/setup_10.x | sudo bash -
 yum install -y nodejs
 yum install -y gcc-c++ make
-#npm install
-#npm run start
 
-7.权限
+#2.3 webserver
+yum install -y nginx
+
+#2.4 elastic search
+find /esdata -name elasticsearch  -print | xargs yum localinstall -y
+sed 's/\/var\/lib\/elasticsearch/\/esdata\/data1,\/esdata\/data2\/,\/esdata\/data2\/from3to10\/3\/data3\/,\/esdata\/data2\/from3to10\/4\/data4,\/esdata\/data2\/from3to10\/5\/data5,\/esdata\/data2\/from3to10\/6\/data6,\/esdata\/data2\/from3to10\/7\/data7,\/esdata\/data2\/from3to10\/8\/data8,\/esdata\/data2\/from3to10\/9\/data9\/,\/esdata\/data2\/from3to10\/10\/data10\//' /etc/elasticsearch/elasticsearch.yml
+
+#3. change es data config
+#3.1 elasticsearch
 cat <<'EOF' >> /etc/elasticsearch/elasticsearch.yml
 network.host: 0.0.0.0
 http.cors.enabled: true
 http.cors.allow-origin: "*"
 EOF
+
+#3.2 data file 
 sed 's/\/var\/lib\/elasticsearch/\/esdata\/data1,\/esdata\/data2\/,\/esdata\/data2\/from3to10\/3\/data3\/,\/esdata\/data2\/from3to10\/4\/data4,\/esdata\/data2\/from3to10\/5\/data5,\/esdata\/data2\/from3to10\/6\/data6,\/esdata\/data2\/from3to10\/7\/data7,\/esdata\/data2\/from3to10\/8\/data8,\/esdata\/data2\/from3to10\/9\/data9\/,\/esdata\/data2\/from3to10\/10\/data10\//' /etc/elasticsearch/elasticsearch.yml
 
-service elasticsearch restart
+#3.3 change owner before start
+chown -R elasticsearch:elasticsearch /esdata/data2/from3to10/ /esdata/data1/nodes/ /esdata/data2/nodes/
 
-8.nginx config
-yum install -y nginx
-
+#3.4 elastic search config port=9200
 cat <<'EOF' > /etc/nginx/conf.d/es.wwwsto.com.conf
 upstream up9200 {
     server localhost:9200;
@@ -77,6 +68,7 @@ server {
 }
 EOF
 
+#3.5 head plugin 9100
 cat <<'EOF' > /etc/nginx/conf.d/head.wwwsto.com.conf
 upstream up9100 {
     server localhost:9100;
@@ -106,6 +98,7 @@ server {
 }
 EOF
 
+#3.6 maven repo
 cat <<'EOF' > /etc/nginx/conf.d/mvn.wwwsto.com.conf
 upstream up8081 {
     server localhost:8081;
@@ -134,3 +127,7 @@ server {
     }
 }
 EOF
+
+
+#4. Start service
+service elasticsearch restart
