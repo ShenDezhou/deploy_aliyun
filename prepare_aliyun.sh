@@ -226,3 +226,6 @@ sh start.sh &
 
 cd /esdata/data2/nexus-3.14.0-04/
 sh start.sh
+
+cd /esdata/data2/cerebro-0.8.1
+sh start.sh &
