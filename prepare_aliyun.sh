@@ -186,6 +186,36 @@ server {
 }
 EOF
 
+#3.5 head plugin 9100
+cat <<'EOF' > /etc/nginx/conf.d/cerebro.wwwsto.com.conf
+upstream up9000 {
+    server localhost:9000;
+}
+server {
+    listen       80;
+    server_name cb.wwwsto.com;
+    root  /home/user/www/blog;
+    index index.html index.htm index.php;
+
+    location ~ {
+      root "/www/html";
+      index index.html;
+      proxy_pass http://up9000;
+      proxy_set_header Host $host:$proxy_port;
+      proxy_set_header X-Real-IP $remote_addr;
+      #proxy_set_header X-Forwarded-For $remote_addr;
+      proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    }
+
+    # PHP
+    location ~ \.php$ {
+        fastcgi_pass unix:/var/run/php5-fpm.sock;
+        fastcgi_index index.php;
+        include fastcgi_params;
+    }
+}
+EOF
+
 #3.6 maven repo
 cat <<'EOF' > /etc/nginx/conf.d/mvn.wwwsto.com.conf
 upstream up8081 {
