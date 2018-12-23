@@ -186,7 +186,7 @@ server {
 }
 EOF
 
-#3.5 head plugin 9100
+#3.6 cerebro plugin 9000
 cat <<'EOF' > /etc/nginx/conf.d/cerebro.wwwsto.com.conf
 upstream up9000 {
     server localhost:9000;
