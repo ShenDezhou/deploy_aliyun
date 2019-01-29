@@ -127,13 +127,13 @@ sed 's/\/var\/lib\/elasticsearch/\/esdata\/data1,\/esdata\/data2\/,\/esdata\/dat
 chown -R elasticsearch:elasticsearch /esdata/data2/from3to10/ /esdata/data1/nodes/ /esdata/data2/nodes/
 
 #3.4 elastic search config port=9200
-cat <<'EOF' > /etc/nginx/conf.d/es.wwwsto.com.conf
+cat <<'EOF' > /etc/nginx/conf.d/es.0x8x.com.conf
 upstream up9200 {
     server localhost:9200;
 }
 server {
     listen       80;
-    server_name es.wwwsto.com;
+    server_name es.0x8x.com;
     root  /home/user/www/blog;
     index index.html index.htm index.php;
 
@@ -157,13 +157,13 @@ server {
 EOF
 
 #3.5 head plugin 9100
-cat <<'EOF' > /etc/nginx/conf.d/head.wwwsto.com.conf
+cat <<'EOF' > /etc/nginx/conf.d/head.0x8x.com.conf
 upstream up9100 {
     server localhost:9100;
 }
 server {
     listen       80;
-    server_name head.wwwsto.com;
+    server_name head.0x8x.com;
     root  /home/user/www/blog;
     index index.html index.htm index.php;
 
@@ -187,13 +187,13 @@ server {
 EOF
 
 #3.6 cerebro plugin 9000
-cat <<'EOF' > /etc/nginx/conf.d/cerebro.wwwsto.com.conf
+cat <<'EOF' > /etc/nginx/conf.d/cerebro.0x8x.com.conf
 upstream up9000 {
     server localhost:9000;
 }
 server {
     listen       80;
-    server_name cb.wwwsto.com;
+    server_name cb.0x8x.com;
     root  /home/user/www/blog;
     index index.html index.htm index.php;
 
@@ -217,13 +217,13 @@ server {
 EOF
 
 #3.6 maven repo
-cat <<'EOF' > /etc/nginx/conf.d/mvn.wwwsto.com.conf
+cat <<'EOF' > /etc/nginx/conf.d/mvn.0x8x.com.conf
 upstream up8081 {
     server localhost:8081;
 }
 server {
     listen       80;
-    server_name mvn.wwwsto.com;
+    server_name mvn.0x8x.com;
     root  /home/user/www/blog;
     index index.html index.htm index.php;
 
